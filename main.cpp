@@ -23,13 +23,35 @@ private:
 	int blue;
 };
 
+void setColor(Color& color, int r, int b, int g) {
+	color.setRed(r);
+	color.setGreen(b);
+	color.setBlue(g);
+}
+
 int main() {
 	Color coral;
-	Color 
+	Color turquoise;
+	Color maroon;
+	Color indigo;
+	Color magenta;
 
-	coral.setRed(249);
-	coral.setGreen(162);
-	coral.setBlue(178);
+	setColor(coral, 249, 162, 178);
+	setColor(turquoise, 162, 246, 249);
+	setColor(maroon, 125, 46, 58);
+	setColor(indigo, 54, 59, 152);
+	setColor(magenta, 213, 60, 162);
+
+	cout << "Coral - ";
+	coral.print();
+	cout << "Turquoise - ";
+	turquoise.print();
+	cout << "Maroon - ";
+	maroon.print();
+	cout << "Indigo - ";
+	indigo.print();
+	cout << "Magenta - ";
+	magenta.print();
 
 	return 0;
 }
