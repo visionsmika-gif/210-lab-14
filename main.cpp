@@ -23,7 +23,7 @@ private:
 	int blue;
 };
 
-// setColor() sets Color object's red, blue, and green values.
+// setColor() sets a Color object's red, blue, and green values.
 // args: a reference to a Color object and three ints for red, blue, green
 // returns: void
 void setColor(Color& color, int r, int b, int g);
@@ -36,12 +36,14 @@ int main() {
 	Color magenta;
 	const int PRINT_WIDTH = 12; // Used for neat output
 
+	// Set RGB values for each color
 	setColor(coral, 249, 162, 178);
 	setColor(turquoise, 162, 246, 249);
 	setColor(maroon, 125, 46, 58);
 	setColor(indigo, 54, 59, 152);
 	setColor(magenta, 213, 60, 162);
 
+	// Output each color
 	cout << left << setw(PRINT_WIDTH) << "Coral";
 	coral.print();
 	cout << setw(PRINT_WIDTH) << "Turquoise";
