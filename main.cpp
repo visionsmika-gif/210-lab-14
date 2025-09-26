@@ -1,8 +1,8 @@
-// Create a Color class that has as its private member variables three integers representing the red, green, and blue values of that color.
-// Code normal setter & getter member functions. Also code a member print() method to print the object data.
-// In main(), create several Color objects, populate them with data, and output their values to the console in neatly - formatted output using the object's print() method.
+// COMSC-210 | Lab 14 | Mika Aquino
+// IDE used: Visual Studio 2022
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -23,11 +23,10 @@ private:
 	int blue;
 };
 
-void setColor(Color& color, int r, int b, int g) {
-	color.setRed(r);
-	color.setGreen(b);
-	color.setBlue(g);
-}
+// setColor() sets Color object's red, blue, and green values.
+// args: a reference to a Color object and three ints for red, blue, green
+// returns: void
+void setColor(Color& color, int r, int b, int g);
 
 int main() {
 	Color coral;
@@ -35,6 +34,7 @@ int main() {
 	Color maroon;
 	Color indigo;
 	Color magenta;
+	const int PRINT_WIDTH = 12; // Used for neat output
 
 	setColor(coral, 249, 162, 178);
 	setColor(turquoise, 162, 246, 249);
@@ -42,16 +42,22 @@ int main() {
 	setColor(indigo, 54, 59, 152);
 	setColor(magenta, 213, 60, 162);
 
-	cout << "Coral - ";
+	cout << left << setw(PRINT_WIDTH) << "Coral";
 	coral.print();
-	cout << "Turquoise - ";
+	cout << setw(PRINT_WIDTH) << "Turquoise";
 	turquoise.print();
-	cout << "Maroon - ";
+	cout << setw(PRINT_WIDTH) << "Maroon";
 	maroon.print();
-	cout << "Indigo - ";
+	cout << setw(PRINT_WIDTH) << "Indigo";
 	indigo.print();
-	cout << "Magenta - ";
+	cout << setw(PRINT_WIDTH) << "Magenta";
 	magenta.print();
 
 	return 0;
+}
+
+void setColor(Color& color, int r, int b, int g) {
+	color.setRed(r);
+	color.setGreen(b);
+	color.setBlue(g);
 }
